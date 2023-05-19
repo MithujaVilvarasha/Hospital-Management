@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Bill Payment</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="Home.css">
+    <link rel="boostrap" href="css/bootstrap.min.css">
+    <script>
+        const submitButton = document.getElementById('submit-button');
+        const paymentForm = document.getElementById('payment-form');
+        const payeeForm = document.getElementById('payee-form');
+      
+        submitButton.addEventListener('click', () => {
+          const formData = new FormData(paymentForm);
+          const payeeFormData = new FormData(payeeForm);
+      
+          for (const [name, value] of payeeFormData) {
+            formData.append(name, value);
+          }
+      
+          fetch('process-payment-and-payee.php', {
+            method: 'POST',
+            body: formData
+          }).then(response => {
+            console.log('Form submitted successfully!');
+          }).catch(error => {
+            console.error('Error submitting form:', error);
+          });
+        });
+      </script>
+  </head>
+  <body>
+    <table class="nav">
+        <tr >
+            <td>
+                <img src="Home\Health logo - Made with PosterMyWall 1.png" alt="Logo" class="img">
+
+            </td>
+            <td ><a href="">Home</a></td>
+            <td><a href="">About Us</a></td>
+            <td><a href="">Our Services</a></td>
+            <td><a href="">Contact Us</a></td>
+            <td><a><button class="bu1">Staff Login</button></a></td>
+
+              
+        </tr>
+    </table>
+    <div class="bill">
+        <div>
+            <div>
+                
+                <button class="a1"><a href="" ><img src="Home/icons8-receive-dollar-50.png"></a></button>
+                <button class="a2"><a href="" ><img src="Home/stethoscope 1.png"></a></button>
+                <button class="a3"><a href=""><img src="Home/health-service 1.png"></a></button>
+                
+                <button class="a4"><a href=""><img src="Home/support 1.png"></a></button>
+                <button class="a5"><a href=""><img src="Home/group 1.png"></a></button>
+                <img src="Home/matthew-waring-KtDT5waLwI8-unsplash 1.png" alt="BillPay" style="width: 100%;height: 1201px;">
+                <form action="process-payment.php" method="POST" style="position: absolute;margin-top: -1000px;margin-left: 150px;">
+                <form id="payment-form" action="process-payment.php" method="POST">
+  <label style="color: black;font-size: 32px;" for="payment-type">Payment Type:</label>
+  <select id="payment-type" name="payment-type" style="width: 340px;height: 40px;font-size: 24px;background-color: #D9D9D9;margin-left: 60px;">
+    <option value="credit-card">Credit Card</option>
+    <option value="paypal">Paypal</option>
+  </select><br><br><br>
+
+  <label style="color: black;font-size: 32px;"for="patient-first-name">Patient First Name:</label>
+  <input style="width: 340px;height: 40px;" type="text" id="patient-first-name" name="patient-first-name"><br><br>
+
+  <label style="color: black;font-size: 32px;"for="patient-last-name">Patient Last Name:</label>
+  <input style="width: 340px;height: 40px;"type="text" id="patient-last-name" name="patient-last-name"><br><br>
+
+  <label style="color: black;font-size: 32px;"for="amount">Amount(Rs):</label>
+  <input style="width: 340px;height: 40px;margin-left: 95px;"type="text" id="amount" name="amount"><br><br>
+
+  <label style="color: black;font-size: 32px;"for="relationship">Relationship for<br> Patient:</label>
+  <input style="width: 340px;height: 40px;margin-left: 165px;"type="text" id="relationship" name="relationship"><br><br>
+
+  <label style="color: black;font-size: 32px;"for="special-request">Special Request:</label>
+  <input style="width: 340px;height: 40px;margin-left: 32px;height: 115px;"type="text" id="special-request" name="special-request"><br><br>
+
+  
+    <input style="margin-left: 30px;" type="checkbox" id="privacy-agreement" name="privacy-agreement" value="agree">
+    <label style="color: black;font-size: 24px;margin-left: -300px;"for="privacy-agreement">I have read and agree to your privacy statement.</label>
+    
+  </label><br>
+</form>
+<button href="" id="submit-button" type="button" style=" width: 220px;height: 67px;border-radius: 20px;background-color: #4AAFB3;font-size: 24px;">Pay Now</button>
+
+<form id="payee-form" action="process-payee-info.php" method="POST" style="position: absolute;margin-left: 820px;margin-top: -1000px;">
+  <label style="color: black;font-size: 32px;"for="payee-first-name">Payee<br> First Name:</label>
+  <input style="width: 300px;height: 40px;"type="text" id="payee-first-name" name="payee-first-name"><br><br>
+
+  <label style="color: black;font-size: 32px;"for="payee-last-name">Payee<br> Last Name:</label>
+  <input style="width: 300px;height: 40px;"type="text" id="payee-last-name" name="payee-last-name"><br><br>
+
+  <label style="color: black;font-size: 32px;"for="payee-address">Payee<br> Address:</label>
+  <input style="width: 300px;height: 40px;margin-left: 37px;"type="text" id="payee-address" name="payee-address"><br><br>
+
+  <label style="color: black;font-size: 32px;"for="payee-email">Payee<br> Email:</label>
+  <input style="width: 300px;height: 40px;margin-left: 74px;"type="email" id="payee-email" name="payee-email"><br><br>
+</form>
+
+
+
+
+
+
+            </div>
+            
+        </div>
+
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="col-12">
+                <div class="row" >
+                    <div class="col-4">
+                        <h4 class="con">CONTACT US</h4>
+                        <h4 class="det">CONTACT DETAILS</h4>
+                        <h4 class="loc">LOCATION</h4>
+                        <a href=""><img class="footer-image"src="Home/linkedin.png"></a>
+                        <a href=""><img class="footer-image1"src="Home/facebook 1.png"></a>
+                        <a href=""><img class="footer-image2"src="Home/instagram 1.png"></a>
+                        <h5 class="contact-details">
+                            Asclepius Hospital Lorance Road, Colombo 04.<br><br> Phone:+94011 152 099 <br><br><a>Email:info@asclepiushospital.lk</a>
+                        </h5>
+                        <a href=""><img class="map-image" src="Home/Group 71.png"></a>
+
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

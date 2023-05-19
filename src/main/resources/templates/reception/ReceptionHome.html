@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Home.css}">
+    <link rel="boostrap" th:href="@{css/bootstrap.min.css}">
+    <script th:src="@{/js/StaffLogin.js}" type="text/javascript"></script>
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{https://getbootstrap.com/docs/5.3/assets/css/docs.css}" rel="stylesheet">
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js}"></script>
+<head>
+<meta charset="ISO-8859-1">
+<title>Receptionist Home</title>
+<script>
+	function myFunction() {
+  document.getElementById("demo").innerHTML = "ADDED SUCCESSFULLY!";
+}
+</script>
+<style>
+	.img{
+    padding-left: 50px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    padding-top: 25px;
+    width: 109.13PX;
+    height: 112.37PX;
+}
+</style>
+
+</head>
+  <body>
+    <table class="nav">
+        <tr >
+              <td>
+                <a th:href="@{/reception/home}" style="margin-left: 50px; text-decoration: none; color:white; margin-top:25px">Home</a>
+
+            </td>
+           
+            
+             <td>
+                <a th:href="@{/reception/register}" style="margin-left: 50px; text-decoration: none; color:white; margin-top:25px;">Patient_Register</a>
+
+            </td>
+            
+            <td> 
+            <form th:action="@{/reception/logout}"  method="post">
+            <input class="bu9" type="submit" value="Logout" style="margin-top:40px ;"  />
+        	</form>
+        	
+        	</td>
+
+              
+        </tr>
+    </table>
+    <table class="table">
+  <thead>
+    <tr>
+      <th>PatientID</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>DOB</th>
+      <th>Register Date</th>
+      <th>Age</th>
+      <th>ContactNumber</th>
+      <th>DoctorName</th>
+      <th>Edit</th>
+      <th>Delete</th>
+     
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr th:each="patient : ${listpatient}" >
+      <td th:text="${patient.patid}">PatientID</td>
+      <td th:text="${patient.firstname}">FirstName</td>
+      <td th:text="${patient.lastname}">LastName</td>
+      <td th:text="${patient.dob}">DOB</td>
+       <td th:text="${patient.registerdate}">Register date</td>
+      <td th:text="${patient.age}">Age</td>
+      <td th:text="${patient.contnum}">ContactNumber</td>
+      <td th:text="${patient.doctname}">DoctorName</td>
+      <td>
+<a th:href="@{'/edit/' + ${patient.patid}}">Edit</a>
+</td>     
+<td>
+<a th:href="@{'/delete/' + ${patient.patid}}">Delete</a>
+</td>    
+
+      
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+    
+    <footer>
+        <div class="footer">
+            <div class="col-12">
+                <div class="row" >
+                    <div class="col-4">
+                        <h4 class="con">CONTACT US</h4>
+                        <h4 class="det">CONTACT DETAILS</h4>
+                        <h4 class="loc">LOCATION</h4>
+                        <a href=""><img class="footer-image" th:src="@{/Home/linkedin.png}"></a>
+                        <a href=""><img class="footer-image1" th:src="@{/Home/facebook 1.png}"></a>
+                        <a href=""><img class="footer-image2" th:src="@{/Home/instagram 1.png}"></a>
+                        <h5 class="contact-details">
+                            Asclepius Hospital Lorance Road, Colombo 04.<br><br> Phone:+94011 152 099 <br><br><a>Email:info@asclepiushospital.lk</a>
+                        </h5>
+                        <a href=""><img class="map-image" th:src="@{/Home/Group 71.png}"></a>
+
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

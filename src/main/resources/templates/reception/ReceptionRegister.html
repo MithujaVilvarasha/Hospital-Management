@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Home.css}">
+    <link rel="boostrap" th:href="@{css/bootstrap.min.css}">
+    <script th:src="@{/js/Reception.js}" type="text/javascript"></script>
+<head>
+<meta charset="ISO-8859-1">
+<title>Receptionist Register</title>
+</head>
+  <body>
+    <table class="nav">
+        <tr >
+          
+             <td>
+                <a th:href="@{/reception/home}">Home</a>
+
+            </td>
+            
+             <td style="padding-left:50px ;">
+                <a th:href="@{/reception/register}">Patient_Register</a>
+
+            </td>
+            
+            <td> 
+            <form th:action="@{/reception/logout}" method="post">
+            <input class="bu9" type="submit" value="Logout" />
+        	</form>
+        	
+        	</td>
+
+              
+        </tr>
+    </table>
+    
+     
+    
+    <div class="st-login-mid4">
+        <div>
+            <div>
+            
+               
+    <form class="reception-form" th:action="@{/save}" th:object="${patient}" method="post">
+     <fieldset style="text-align:center; margin-left:90px; border:5px solid rgb(0, 64, 128); background:#004A61; padding:100px; border-radius:25px; ">
+     <label style="margin-top:50px; color:white;">Patient Firstname</label><br>
+     <input type="text" style="border-radius: 25px" name="firstname" th:field="*{firstname}" placeholder="patient firstname.." /><br><br>
+     <label style="color:white;">Patient Lastname</label><br>
+     <input type="text" style="border-radius: 25px" name="firstname" th:field="*{lastname}" placeholder="patient lasttname.."/><br><br>
+     <label style="color:white;">Patient Age</label><br>
+     <input type="number" style="border-radius: 25px" name="age" th:field="*{age}" placeholder="patient Age.."/><br><br>
+     <label style="color:white;">Contact Number</label><br>
+     <input type="tel" style="border-radius: 25px" name="contnum" th:field="*{contnum}" placeholder="patient ContactNo.."/><br><br>
+     <label style="color:white;">DOB</label><br>
+     <input type="date" style="border-radius: 25px"  name="dob" th:field="*{dob}" placeholder="patient DOB.."/><br><br>
+     <label style="color:white;">Register Date</label><br>
+     <input type="date" style="border-radius: 25px" name="registerdate" th:field="*{registerdate}" placeholder="patient registerDate.."/><br><br>
+     <label style="color:white;">Doctor Name</label><br>
+     <input type="text" style="border-radius: 25px"  name="doctname" th:field="*{doctname}" placeholder="patient Doctor name.."/><br><br>
+     <Button class="bu3" style="margin-bottom:100px;">Register</Button>
+     </fieldset>
+    </form >
+               
+               
+           
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="col-12">
+                <div class="row" >
+                    <div class="col-4">
+                        <h4 class="con">CONTACT US</h4>
+                        <h4 class="det">CONTACT DETAILS</h4>
+                        <h4 class="loc">LOCATION</h4>
+                       <a href=""><img class="footer-image" th:src="@{/Home/linkedin.png}"></a>
+                        <a href=""><img class="footer-image1" th:src="@{/Home/facebook 1.png}"></a>
+                        <a href=""><img class="footer-image2" th:src="@{/Home/instagram 1.png}"></a>
+                        <h5 class="contact-details">
+                            Asclepius Hospital Lorance Road, Colombo 04.<br><br> Phone:+94011 152 099 <br><br><a>Email:info@asclepiushospital.lk</a>
+                        </h5>
+                        <a href=""><img class="map-image" th:src="@{/Home/Group 71.png}"></a>
+
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </footer>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

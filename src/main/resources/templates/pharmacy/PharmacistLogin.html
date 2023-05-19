@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Home.css}">
+    <link rel="boostrap" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/StaffLogin.js}" type="text/javascript"></script>
+<head>
+<meta charset="ISO-8859-1">
+<title>Pharmacist Login Page</title>
+</head>
+<body>
+<table class="nav">
+        <tr >
+         <td>
+                <img align="center" th:src="@{/Home/Health logo - Made with PosterMyWall 1.png}" alt="Logo" class="img">
+            </td>
+            <td ><a href="/">Home</a></td>
+           
+
+              
+        </tr>
+    </table>
+    <div class="st-login-mid-three">
+        <div>
+            <div align="center">
+                <h2 class="contact">
+                    <img th:src="@{/Home/Group 67.png}" class="rounded float-left" alt="">
+                </h2>
+                <form th:action="@{/pharmacy/login}" method="post" class="staff-form">
+                    
+                    <input  style="border-radius: 10px;color: black;" type="email" id="email" name="email" required placeholder="  Email">
+                  
+                    <br><br>
+                    <input  style="border-radius: 10px;color: black;" type="password" id="password" name="password" required placeholder="  password">
+                    <br><br>
+                    <td colspan="2" align="center"><input style="font-size:24px;width: 170px;height: 65px;background-color: #4AAFB3;border-radius: 20px;border: none;margin-left: 80px;margin-top: 40px;" type="submit" value="Login" /></td>
+                   
+                  </form>
+                  
+            </div>
+        </div>
+
+    </div>
+        <footer>
+        <div class="footer">
+            <div class="col-12">
+                <div class="row" >
+                    <div class="col-4">
+                        <h4 class="con">CONTACT US</h4>
+                        <h4 class="det">CONTACT DETAILS</h4>
+                        <h4 class="loc">LOCATION</h4>
+                        <a href=""><img class="footer-image" th:src="@{/Home/linkedin.png}"></a>
+                        <a href=""><img class="footer-image1" th:src="@{/Home/facebook 1.png}"></a>
+                        <a href=""><img class="footer-image2" th:src="@{/Home/instagram 1.png}"></a>
+                        <h5 class="contact-details">
+                            Asclepius Hospital Lorance Road, Colombo 04.<br><br> Phone:+94011 152 099 <br><br><a>Email:info@asclepiushospital.lk</a>
+                        </h5>
+                        <a href=""><img class="map-image" th:src="@{/Home/Group 71.png}"></a>
+
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </footer>
+
+</body>
+</html>
